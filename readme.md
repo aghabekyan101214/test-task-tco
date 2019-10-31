@@ -10,6 +10,6 @@
 <p>0) run command - composer install</p>
 <p>1) Configure .env file, add db credentials there </p>
 <p>2) run command - php artisan key:generate --ansi</p>
-<p>3) run command - php artisan:migrate </p>
+<p>3) run command - php artisan migrate </p>
 <p>4) run command - php artisan db:seed </p>
 <p>5) run command - php artisan serve</p>

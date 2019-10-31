@@ -32,6 +32,7 @@ class StatisticsController extends Controller
     {
         $countUsers = User::count();
         $avgTasks = DB::select("SELECT tasks/users as avg FROM ((SELECT COUNT(id) AS users FROM users) u, (select count(id) AS tasks FROM tasks) b)")[0]->avg;
-
+        $avgTasksToUser = DB::select("SELECT assignedCount/users as avg FROM ((SELECT COUNT(id) AS users FROM users) u, (SELECT count(id) AS assignedCount FROM tasks_assigned_users) b)")[0]->avg;
+        return view(self::FOLDER.".index", compact("countUsers", "avgTasks", "avgTasksToUser"));
     }
 }

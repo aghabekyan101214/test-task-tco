@@ -2,28 +2,20 @@
 
 @section('content')
     <div class="white-box m-t-20">
-        <h3 class="box-title m-b-10">{{ $task->name }}</h3>
+        <h3 class="box-title m-b-10">Statistics</h3>
         <div class="table-responsive">
             <table class="table table-striped">
                 <tr>
-                    <th>Task Name</th>
-                    <th>{{ $task->name }}</th>
+                    <td>User Count</td>
+                    <td>{{ $countUsers }} users</td>
                 </tr>
                 <tr>
-                    <th>Created By</th>
-                    <td>{{ $task->createdBy->name }}</td>
+                    <td>Average Task For Per User</td>
+                    <td>{{ $avgTasks }} tasks created per user</td>
                 </tr>
                 <tr>
-                    <th>Assigned To</th>
-                    <td>{{ $task->assignedTo->name }}</td>
-                </tr>
-                <tr>
-                    <th>Status</th>
-                    <td>{{ $statuses[$task->status] }}</td>
-                </tr>
-                <tr>
-                    <th>Created Date</th>
-                    <td>{{ $task->created_at }}</td>
+                    <td>Average Tasks Assigned To Each User </td>
+                    <td>{{ $avgTasksToUser }} tasks are assigned to each user</td>
                 </tr>
             </table>
         </div>
